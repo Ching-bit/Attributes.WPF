@@ -9,7 +9,7 @@ You can install **Attributes.WPF** via NuGet.
 # Usage
 1. Use **WithDependencyProperty** attribute on a class to define a DependencyProperty.
 ```
-[WithDependencyProperty(typeof(string), "MyMessage")]
+[WithDependencyProperty(typeof(string), "MyMessage", "")]
 public partial class MyView : UserControl
 {
 
