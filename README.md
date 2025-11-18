@@ -4,6 +4,8 @@ This is a simple project using attributes to simplify the property definitions o
 # Installation
 You can install **Attributes.WPF** via NuGet.
 
+**Note:** For .Net Framework WPF, the old version .csproj file is used by default. To run Roslyn Source Generator, the .csproj file must be revised to SDK-style.
+
 # Usage
 1. Use **WithDependencyProperty** attribute on a class to define a DependencyProperty.
 ```
