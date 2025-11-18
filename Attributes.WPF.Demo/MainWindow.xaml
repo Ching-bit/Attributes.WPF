@@ -1,0 +1,28 @@
+﻿<Window x:Class="Attributes.WPF.Demo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Attributes.WPF.Demo"
+        Title="MainWindow"  Width="400" Height="440"
+        x:Name="This">
+
+    <StackPanel>
+        <HeaderedContentControl Header="DependencyProperty number" Margin="10">
+            <TextBox Text="{Binding ElementName=This, Path=MyNumber}"/>
+        </HeaderedContentControl>
+        <HeaderedContentControl Header="DependencyProperty string" Margin="10">
+            <TextBox Text="{Binding ElementName=This, Path=MyString}"/>
+        </HeaderedContentControl>
+        <HeaderedContentControl Header="DenpendencyProperty class" Margin="10">
+            <TextBox Text="{Binding ElementName=This, Path=MyTestModel.Value}"/>
+        </HeaderedContentControl>
+        <HeaderedContentControl Header="AttachedProperty: You can only input numbers here" Margin="10">
+            <TextBox local:TextBoxHelper.OnlyNumbers="True"/>
+        </HeaderedContentControl>
+        
+        <Button Content="Add" Click="Button_Click"
+                Width="120" Height="30" Margin="5"/>
+    </StackPanel>
+    
+</Window>
