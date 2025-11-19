@@ -7,7 +7,7 @@
 	<EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
 
     <PackageId>Attributes.WPF</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Authors>QingyunWu</Authors>
     <Company />
     <Description>A project using attributes to simplify the property definitions of WPF</Description>
