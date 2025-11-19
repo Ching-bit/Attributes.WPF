@@ -14,8 +14,6 @@ namespace Attributes.WPF.Generators
             sb.Append($@"
 namespace {namespaceName}
 {{
-    [global::System.CodeDom.Compiler.GeneratedCode(""Attributes.WPF"", ""1.0.0+25d31925eb2902e7df1fb2118e384ddfae17d415"")]
-    [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
     partial class {className}
     {{");
             foreach (AttributeData attribute in attributes)
@@ -39,11 +37,15 @@ namespace {namespaceName}
                 typeof({className}),
                 new global::System.Windows.PropertyMetadata({defaultValue}{(null == propertyChangedCallback ? string.Empty : $", {propertyChangedCallback}")}));
 
+        [global::System.CodeDom.Compiler.GeneratedCode(""{AppInfo.AppName}"", ""{AppInfo.Version}"")]
+        [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
         public static {propertyType} Get{propertyName}({hostType ?? "global::System.Windows.DependencyObject"} host)
         {{
             return ({propertyType})host.GetValue({propertyName}Property);
         }}
 
+        [global::System.CodeDom.Compiler.GeneratedCode(""{AppInfo.AppName}"", ""{AppInfo.Version}"")]
+        [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
         public static void Set{propertyName}({hostType ?? "global::System.Windows.DependencyObject"} host, {propertyType} value)
         {{
             host.SetValue({propertyName}Property, value);

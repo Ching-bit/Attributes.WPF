@@ -14,8 +14,6 @@ namespace Attributes.WPF
             sb.Append($@"
 namespace {namespaceName}
 {{
-    [global::System.CodeDom.Compiler.GeneratedCode(""{AppInfo.AppName}"", ""{AppInfo.Version}"")]
-    [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
     partial class {className}
     {{");
             foreach (AttributeData attribute in attributes)
@@ -30,6 +28,8 @@ namespace {namespaceName}
                 }
 
                 sb.Append($@"
+        [global::System.CodeDom.Compiler.GeneratedCode(""{AppInfo.AppName}"", ""{AppInfo.Version}"")]
+        [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
         public {propertyType} {propertyName}
         {{
             get {{ return ({propertyType})GetValue({propertyName}Property); }}
